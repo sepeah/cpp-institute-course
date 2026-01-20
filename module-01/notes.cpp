@@ -10,6 +10,9 @@ The result will likely be a nonsensical mix of code snippets
 
 #include <iostream>
 
+// Function declaration
+void function1();
+
 int main() { // main function - execution starts here
     int Number = 66; // setting a variable of int type and value 64
     char character = '*'; // setting a variable of char type and value '*'
@@ -40,6 +43,15 @@ int main() { // main function - execution starts here
     int counter = 0;
     if(counter < 5) std::cout << "It's less than 5" << std::endl; // if statement
 
+    function1(); // Calling a function
+    
+
     return 0; // indicate that program ended successfully
 
 }
+
+
+
+void function1() {
+    int byte = 255; std::cout << std::hex << byte << std::endl; 
+}// hex representation of an integer
