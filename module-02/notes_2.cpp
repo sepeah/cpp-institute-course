@@ -28,14 +28,17 @@ int function5();
 // break and continue
 int function6();
 
-int main(void)
-{
+// bitwise operators
+int function7();
+
+int main(void) {
     function1();
     std::cout << "function2 returns: " << function2() << std::endl;
     std::cout << "function3 looping...\n" << function3() << " LOOPS!" << std::endl;
     function4();
     function5();
     function6();
+    std::cout<<function7()<<" musketeers found"<<std::endl;
     return 0;
 }
 
@@ -108,3 +111,21 @@ int function6() {
     }
     return 0;
 }   
+
+int function7() {
+    int binary1, binary2, result;
+    binary1 = 0b1010;
+    binary2 = 0b0111;
+    result = binary1 & binary2; // bitwise AND (1010 & 0111 = 0010)
+    result = result | binary2; // bitwise OR (0010 | 0111 = 0111)
+    result = result ^ binary1; // bitwise XOR (0111 ^ 1010 = 1101)
+    result = ~result & 0xF; // bitwise NOT masked to 4 bits (~1101 & 1111 = 0010)
+    result = result << 2; // left shift (0010 << 2 = 1000)
+    result = result >> 1; // right shift (1000 >> 1 = 0100) 
+    return result; // returns 4
+
+
+
+
+
+}
