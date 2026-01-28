@@ -8,6 +8,7 @@ The result will likely be a nonsensical mix of code snippets
 */
 
 #include <iostream>
+#include <string>
 
 
 
@@ -17,10 +18,14 @@ void function1();
 // array, matrix
 int function2();
 
+// Structures
+int function3();
+
 int main() {
 
     function1();
     std::cout << "function2 returns: " << function2() << std::endl;
+    std::cout << "function3 returns Potters level as: " << function3() << std::endl;
     return 0;
 }
 
@@ -57,4 +62,21 @@ int function2() {
             if (chessboard[counter][counter2]==ROOK) rooks_sum++;
 
     return rooks_sum;
+}
+
+int function3() {
+
+    struct WIZARD {
+    std::string name;
+    float age;
+    int level;
+    };
+    WIZARD HarryPotter;
+
+    HarryPotter.name = "Harry Potter";
+    HarryPotter.age = 17.5;
+    HarryPotter.level = 7;
+
+    return HarryPotter.level;
+
 }
