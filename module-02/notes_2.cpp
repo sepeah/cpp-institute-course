@@ -1,7 +1,7 @@
 
 /* 
 A file for testing C++ features as they come along in the material of 
-C++ Essentials 1 – Edube Interactive. module 2
+C++ Essentials 1 – Edube Interactive. module 2, part 1/2
 https://cppinstitute.org/cpp-essentials-1
 
 

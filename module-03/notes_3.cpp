@@ -14,6 +14,9 @@
 
 using namespace std;
 
+// Global variable declaration
+int globalvar = 1;
+
 // pointers
 void function1();
 
@@ -26,11 +29,18 @@ void function3();
 //using function parameters
 void function4(unsigned short x, char c);
 
+//modifying parameters by reference, global variables and side-effects
+void function5(int &refVar);
+
 int main() {
     function1();
     funtion2();
     function3();
     function4(5,'#');
+    int a = 10;
+    cout << "Before function5, a = " << a << ", global counter = " << globalvar << endl;
+    function5(a);
+    cout << "After function5, a = " << a << ", global counter = " << globalvar << endl;
     return 0;
 }
 
@@ -43,7 +53,6 @@ pointer = &number; // pointer now holds the address of number variable
 
 cout << "Address: " << pointer << endl;
 cout << "Value of number in address: " << *pointer << endl;
-
 int *nullpointer = nullptr; // null pointer initialization
 }
 
@@ -81,3 +90,10 @@ void function4(unsigned short x,char c){
     cout << c;
     cout << endl;
 }  
+
+void function5(int &refVar) {
+    refVar += 4 + globalvar;
+    cout << "Inside function5, refVar = " << refVar << endl;
+    globalvar++;
+
+}
