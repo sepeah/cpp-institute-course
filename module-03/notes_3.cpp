@@ -32,6 +32,9 @@ void function4(unsigned short x, char c);
 //modifying parameters by reference, global variables and side-effects
 void function5(int &refVar);
 
+//modifying a value in pointer (C-style)
+void function6(int * ptr);
+
 int main() {
     function1();
     funtion2();
@@ -41,6 +44,12 @@ int main() {
     cout << "Before function5, a = " << a << ", global counter = " << globalvar << endl;
     function5(a);
     cout << "After function5, a = " << a << ", global counter = " << globalvar << endl;
+    int pointervalue = 0;
+    int * pointer = & pointervalue;
+    function6(pointer);
+    cout << "After function6, pointervalue = " << pointervalue << endl; 
+
+    
     return 0;
 }
 
@@ -96,4 +105,8 @@ void function5(int &refVar) {
     cout << "Inside function5, refVar = " << refVar << endl;
     globalvar++;
 
+}
+
+void function6(int * ptr) {
+    * ptr = * ptr + 1;
 }
