@@ -35,6 +35,9 @@ void function5(int &refVar);
 //modifying a value in pointer (C-style)
 void function6(int * ptr);
 
+// several parameters, default parameters
+void function7(string what, int howmany = 1);
+
 int main() {
     function1();
     funtion2();
@@ -48,7 +51,10 @@ int main() {
     int * pointer = & pointervalue;
     function6(pointer);
     cout << "After function6, pointervalue = " << pointervalue << endl; 
-
+    int howmany = 5;
+    string what = "donut ";
+    function7("coffee and ");
+    function7(what,howmany);
     
     return 0;
 }
@@ -109,4 +115,13 @@ void function5(int &refVar) {
 
 void function6(int * ptr) {
     * ptr = * ptr + 1;
+}
+
+void function7(string what, int howmany) {
+    int counter = 0;
+    while(howmany > counter){
+        cout << what;
+        counter += 1;
+    }
+    cout << endl;
 }
