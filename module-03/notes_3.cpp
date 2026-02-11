@@ -38,6 +38,9 @@ void function6(int * ptr);
 // several parameters, default parameters
 void function7(string what, int howmany = 1);
 
+// ternary operator ?
+float function8(float a = 2.5, float b = 10.8);
+
 int main() {
     function1();
     funtion2();
@@ -55,7 +58,7 @@ int main() {
     string what = "donut ";
     function7("coffee and ");
     function7(what,howmany);
-    
+    cout << function8() << " was bigger." << endl;
     return 0;
 }
 
@@ -124,4 +127,7 @@ void function7(string what, int howmany) {
         counter += 1;
     }
     cout << endl;
+}
+float function8(float a, float b) {
+  return a > b ? a : b;
 }

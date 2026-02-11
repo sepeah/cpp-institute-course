@@ -24,7 +24,7 @@ int function3();
 int main() {
 
     function1();
-    std::cout << "function2 returns: " << function2() << std::endl;
+    std::cout << "function2 prints a chessboard and returns the number of rooks:\n" << function2() << std::endl;
     std::cout << "function3 returns Potters level as: " << function3() << std::endl;
     return 0;
 }
@@ -57,6 +57,13 @@ int function2() {
     chessboard[7][0] = ROOK;
     chessboard[7][7] = ROOK;
     int rooks_sum = 0;
+    // Print the chessboard
+    for (int row = 0; row < 8; row++) {
+        for (int col = 0; col < 8; col++) {
+            std::cout << chessboard[row][col] << " ";
+        }
+        std::cout << std::endl;  // New line after each row
+}
     for (int counter = 0;counter<8;counter++)
         for (int counter2 = 0;counter2<8;counter2++)
             if (chessboard[counter][counter2]==ROOK) rooks_sum++;
