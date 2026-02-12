@@ -11,13 +11,23 @@
 
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // bubble sorting of an array.
 void function1();
 
+// new, delete, dynamic memory allocation
+void function2();
+
+// using std::vector for dynamic arrays. push_back, range-based for loop
+void function3();
+
+
 int main() {
     function1();
+    function2();
+    function3();
     return 0;
 }
 
@@ -42,4 +52,35 @@ void function1() {
     for(int i = 0;i<6;i++)
         cout << arr1[i] << " ";
     cout << endl;
+}
+
+void function2() {
+    // Example for using new, delete - dynamic memory allocation
+    int* ptr = new int[5];  // allocates an array of 5 integers
+
+    for(int i = 0; i < 5; i++) {
+        ptr[i] = i * 10;  // initialize array elements
+    }
+
+    cout << "Dynamically allocated raw array: ";
+    for(int i = 0; i < 5; i++) {
+        cout << ptr[i] << " ";
+    }
+    cout << endl;
+
+    delete[] ptr;  // free the dynamically allocated memory
+}
+
+void function3() {
+    std::vector<int> arr;
+
+    for (int i = 0; i < 5; i++) {
+        arr.push_back(i * 10);
+    }
+
+    cout << "Dynamically allocated array using vector: ";
+    for (int value : arr) {
+        cout << value << " ";
+    }
+    std::cout << std::endl;
 }
